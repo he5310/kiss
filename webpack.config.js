@@ -1,15 +1,16 @@
 const webpack = require('webpack');
+var path = require('path')
 module.exports = {
   // devtool: 'eval-source-map',
-  entry: `${__dirname}/src/index.js`,
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
-    path: `${__dirname}/dist`,
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: `${__dirname}/dist`,
+    contentBase: path.resolve(__dirname, './dist'),
     inline: true,
-    host:'localhost',
+    host: 'localhost',
     port: 8081,
     historyApiFallback: true,
     compress: true,
@@ -28,7 +29,7 @@ module.exports = {
             ]
           }
         },
-        exclude: '/node_modules/'
+        exclude: /node_modules/
       },
       {
         test: /\.less$/,
@@ -71,11 +72,11 @@ module.exports = {
     ]
   },
   plugins: [
-   /*  new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }), */
+    /*  new webpack.optimize.UglifyJsPlugin({
+       compress: {
+         warnings: false
+       }
+     }), */
     new webpack.HotModuleReplacementPlugin()
   ]
 }

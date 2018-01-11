@@ -38,7 +38,17 @@ import { render } from 'react-dom';
 import Tabs from './components/Tabs/index';
 
 import 'normalize.css';
-import './index.less'
+import './index.less';
+
+import AsyncCompHoc from './components/Hoc/AsyncComponent';
+
+
+const Home = AsyncCompHoc(()=>System.import('./views/main/home').then(module=>module.default))
+
+const Explore = AsyncCompHoc(()=>System.import('./views/main/explore').then(module=>module.default))
+
+const User = AsyncCompHoc(() => System.import('./views/user/route').then(module => module.default));
+
 
 const App = (props) => {
   return (
@@ -47,43 +57,12 @@ const App = (props) => {
         <Route exact path='/' render={() =>
           <Redirect to='/home' />
         }></Route>
-        {/* <Redirect from='/' to='/home' /> */}
-        <Route path='/home' render={(props) => {
-          return (
-            <div>
-              <div style={{height:'7rem'}}></div>
-              <Tabs />
-              <div style={{ height: 1000 }}>主页</div>
-            </div>
-          )
-        }}></Route>
-        <Route path='/explore' render={(props) => {
-          return (
-            <div>
-              <div style={{ height: '7rem' }}></div>
-              <Tabs />
-              <div style={{ height: 1000 }}>搜索</div>
-            </div>
-          )
-        }}></Route>
-        <Route path='/notifications' render={(props) => {
-          return (
-            <div>
-              <div style={{height:'7rem'}}></div>
-              <Tabs />
-              <div style={{ height: 1000 }}>通知</div>
-            </div>
-          )
-        }}></Route>
-        <Route path='/messages' render={(props) => {
-          return (
-            <div>
-              <div style={{ height: '7rem' }}></div>
-              <Tabs />
-              <div style={{ height: 1000 }}>私信</div>
-            </div>
-          )
-        }}></Route>
+        <Route path='/home' component={Home}></Route>
+        <Route path='/explore' component={Explore}></Route>
+        <Route path='/user' component = {User}></Route>
+        {/* <Route path='/explore' component={Explore}></Route>
+        <Route path='/notifications' component={Notifications}></Route>
+        <Route path='/messages' component={Messages}></Route> */}
       </main>
     </BrowserRouter>)
 }
