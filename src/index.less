@@ -1,3 +1,6 @@
+@themeColor:#1da1f2;
+@default-btn-height:3rem;
+
 html{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -10,4 +13,50 @@ html,body{
 
 body{
   overflow-y: scroll
+}
+
+button{
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @themeColor;
+  color: white;
+  height: @default-btn-height;
+  outline: none;
+  border:none;
+  font-size: 1.2rem
+}
+
+a{
+  text-decoration: none;
+  color:@themeColor
+}
+
+button:active{
+  border-style:none;
+  background-color: white;
+  color:@themeColor;
+  border:solid thin @themeColor;
+}
+
+button:disabled{
+  background-color: #aaa;
+  color: gray;
+}
+
+input{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: @default-btn-height;
+  outline: none;
+  text-indent: 5px
+}
+
+input,button{
+  border-radius: 4px;
+  -webkit-appearance: none;
 }
