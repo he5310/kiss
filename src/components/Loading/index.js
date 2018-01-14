@@ -29,26 +29,26 @@ const LoaderBox = styled.div`
   justify-content:center;
   color:white;
   border-radius:5px;
-`
+`;
 
 const LoadingBox = (props) => {
-  return (
-    props.isLoading ? <LoaderBox>
-      <Rotate style={{ lineHeight: 0 }}>
-        <Loader width="30" height="100%" />
-      </Rotate>
-      <div style={{ marginTop: '1rem' }}>数据请求中...</div>
-    </LoaderBox> : null
-  )
-}
+	return (
+		props.isLoading ? <LoaderBox>
+			<Rotate style={{ lineHeight: 0 }}>
+				<Loader width="30" height="100%" />
+			</Rotate>
+			<div style={{ marginTop: '1rem' }}>数据请求中...</div>
+		</LoaderBox> : null
+	);
+};
 
 export const LoadingIcon = (props) => {
-  const {size} = props
-  return (
-    <Rotate style={{ lineHeight: 0 }}>
-      <Loader width={size||"30"} height="100%" />
-    </Rotate>
-  )
-}
+	const {size} = props;
+	return (
+		<Rotate style={{ lineHeight: 0 }}>
+			<Loader width={size||'30'} height="100%" />
+		</Rotate>
+	);
+};
 
 export default LoadingBox;

@@ -33,25 +33,38 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader",
-          options: {
-            modules: true
-          }
-        }, {
-          loader: "less-loader"
-        }]
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:5]'
+            }
+          }, {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:5]'
+            }
+          }, {
+            loader: "less-loader"
+          }]
       },
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          {
+            loader: 'style-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:5]'
+            }
+          },
           {
             loader: 'css-loader',
             options: {
-              modules: true
+              modules: true,
+              localIdentName: '[local]-[hash:base64:5]'
             }
           },
         ]

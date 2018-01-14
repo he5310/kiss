@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function(){
-  return <div>
+	return <div>
     这是搜索页面对于经常使用Git的朋友来说，.gitignore配置一定不会陌生。废话不说多了，接下来就来说说这个.gitignore的使用。
 
 首先要强调一点，这个文件的完整文件名就是".gitignore"，注意最前面有个“.”。
@@ -33,5 +33,5 @@ export default function(){
 以问号“?”通配单个字符
 以方括号“[]”包含单个字符的匹配列表；
 以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
-  </div>
+	</div>;
 }

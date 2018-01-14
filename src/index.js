@@ -38,15 +38,15 @@ import { render } from 'react-dom';
 import Tabs from './components/Tabs/index';
 
 import 'normalize.css';
-import './index.less';
+import './style.less';
 
 import AsyncCompHoc from './components/Hoc/AsyncComponent';
 
 import CommonComp from './views/index';
 
-const Home = AsyncCompHoc(() => System.import('./views/main/home').then(module => module.default))
+const Home = AsyncCompHoc(() => System.import('./views/main/home').then(module => module.default));
 
-const Explore = AsyncCompHoc(() => System.import('./views/main/explore').then(module => module.default))
+const Explore = AsyncCompHoc(() => System.import('./views/main/explore').then(module => module.default));
 
 const User = AsyncCompHoc(() => System.import('./views/user/route').then(module => module.default));
 
@@ -56,26 +56,26 @@ const Test = AsyncCompHoc(() => System.import('./views/main/test').then(module =
 
 
 const App = (props) => {
-  return (
-    <BrowserRouter>
-      <main>
-        <CommonComp />
-        <Switch>
-          <Route exact path='/' render={() =>
-            <Redirect to='/home' />
-          }></Route>
-          <Route path='/home' component={Home}></Route>
-          <Route path='/explore' component={Explore}></Route>
-          <Route path='/user' component={User}></Route>
-          <Route path='/test' component={Test}></Route>
-          <Route component={InvalidRoute}></Route>
-          {/* <Route path='/explore' component={Explore}></Route>
+	return (
+		<BrowserRouter>
+			<main>
+				<CommonComp />
+				<Switch>
+					<Route exact path='/' render={() =>
+						<Redirect to='/home' />
+					}></Route>
+					<Route path='/home' component={Home}></Route>
+					<Route path='/explore' component={Explore}></Route>
+					<Route path='/user' component={User}></Route>
+					<Route path='/test' component={Test}></Route>
+					<Route component={InvalidRoute}></Route>
+					{/* <Route path='/explore' component={Explore}></Route>
         <Route path='/notifications' component={Notifications}></Route>
         <Route path='/messages' component={Messages}></Route> */}
-        </Switch>
-      </main>
-    </BrowserRouter>)
-}
+				</Switch>
+			</main>
+		</BrowserRouter>);
+};
 
 
-render(<App />, document.getElementById('root'))
+render(<App />, document.getElementById('root'));

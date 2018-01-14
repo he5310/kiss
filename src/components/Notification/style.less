@@ -1,0 +1,21 @@
+.notification-wrap{
+  border-radius: 4px;
+  background-color: #eee;
+  max-height: 8.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform ease-in .3s;
+  transform: translate3d(0,-8.5rem,0)
+}
+
+.notification-wrap.notification-wrap-show{
+  transform: translate3d(0,0,0)
+}
+
+.notification-wrap>.notification-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  line-height: 2.5rem;
+  padding: 5 
+}
