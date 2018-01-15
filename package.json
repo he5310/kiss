@@ -9,6 +9,7 @@
   "author": "he5310",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -22,6 +23,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "normalize.css": "^7.0.0",
+    "postcss-loader": "^2.0.10",
     "react": "^16.1.1",
     "react-dom": "^16.2.0",
     "react-feather": "^1.0.8",

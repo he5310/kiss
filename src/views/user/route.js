@@ -8,7 +8,7 @@ const UserReg = AsyncComponentHoc(() => System.import('./reg/page.js').then(modu
 export default () => {
 	return (
 		<div>
-			<div>用户首页</div>
+			<div>用户页面</div>
 			<div>
 				<Switch>
 					<Route exact path='/user' component={UserIndex}></Route>
