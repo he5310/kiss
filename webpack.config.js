@@ -2,7 +2,7 @@ const webpack = require('webpack');
 var path = require('path');
 module.exports = {
 	// devtool: 'eval-source-map',
-	entry: path.resolve(__dirname, './src/index.js'),
+	entry: path.resolve(__dirname, './src/index.tsx'),
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'bundle.js'
@@ -21,8 +21,13 @@ module.exports = {
 			}
 		}
 	},
+	resolve: {
+		// Add '.ts' and '.tsx' as resolvable extensions.
+		extensions: ['.ts', '.tsx', '.js', '.json']
+	},
 	module: {
 		rules: [
+			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
 			{
 				test: /(\.js|\.jsx)$/,
 				use: {
@@ -49,7 +54,7 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							importLoaders: 3
-						} 
+						}
 					}, {
 						loader: 'postcss-loader'
 					}, {
