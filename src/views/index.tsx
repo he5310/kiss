@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Notification from '../components/Notification';
+import * as Notification from '../components/Notification/index';
 
 
 interface stateTypes {

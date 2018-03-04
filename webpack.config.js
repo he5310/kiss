@@ -1,11 +1,13 @@
 const webpack = require('webpack');
 var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	// devtool: 'eval-source-map',
 	entry: path.resolve(__dirname, './src/index.tsx'),
 	output: {
-		path: path.resolve(__dirname, './dist'),
-		filename: 'bundle.js'
+		path: path.resolve(__dirname, './public'),
+		filename: 'bundle.js',
+		chunkFilename: '[name].js'
 	},
 	devServer: {
 		contentBase: path.resolve(__dirname, './dist'),
@@ -15,9 +17,9 @@ module.exports = {
 		historyApiFallback: true,
 		compress: true,
 		hot: true,
-		proxy:{
-			'/api':{
-				target:'http://127.0.0.1:80'
+		proxy: {
+			'/api': {
+				target: 'http://127.0.0.1:80'
 			}
 		}
 	},
@@ -27,7 +29,19 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+			{
+				test: /\.tsx?$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							babelrc: true,
+							plugins: ['react-hot-loader/babel'],
+						},
+					},
+					'awesome-typescript-loader', // (or awesome-typescript-loader)
+				],
+			},
 			{
 				test: /(\.js|\.jsx)$/,
 				use: {
@@ -77,11 +91,9 @@ module.exports = {
 		]
 	},
 	plugins: [
-		/*  new webpack.optimize.UglifyJsPlugin({
-       compress: {
-         warnings: false
-       }
-     }), */
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			template:'public/index.html'
+		})
 	]
 };

@@ -3,7 +3,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../../../components/Button';
-
+import {hot} from 'react-hot-loader';
+@hot(module)
 export default class Login extends React.Component {
 	state = {
 		logining: false
@@ -29,7 +30,7 @@ export default class Login extends React.Component {
 	render() {
 		return (
 			<div style={{ padding: '.5rem' }}>
-				<h1>注册kiss</h1>
+				<h1>注册kiss11</h1>
 				<div>
 					<input type="email" placeholder="邮箱" />
 				</div>

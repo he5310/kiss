@@ -1,13 +1,15 @@
 import * as React from 'react';
 
 import { Link } from 'react-router-dom';
+import {hot} from 'react-hot-loader';
 
-import Button from '../../../components/Button';
+import Button from '../../../components/Button/index';
 
 interface LoginStateTypes {
 	logining?: boolean
 }
 
+@hot(module)
 export default class Login extends React.Component<{}, LoginStateTypes>{
 	state = {
 		logining: false

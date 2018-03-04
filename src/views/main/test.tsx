@@ -11,7 +11,7 @@ request('/login',{
 	pass:'He911215'
 });
 
-import Notification from '../../components/Notification';
+import Notification from '../../components/Notification/index';
 
 export default class Test extends React.Component {
 	render() {
