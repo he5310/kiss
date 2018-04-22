@@ -9,13 +9,14 @@ export default (getComponent: Function) => class AsyncComponent extends Componen
 		this.state = {
 			Comp: null
 		}
+
+	}
+	componentWillMount() {
 		getComponent().then((comp: any) => {
 			this.setState({
 				Comp: comp
 			});
 		});
-	}
-	componentWillMount() {
 	}
 
 	render() {

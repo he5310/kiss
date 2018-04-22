@@ -7,8 +7,7 @@ var X = require('react-feather').X;
 var request = require('../../services/request.js').default;
 
 request('/login',{
-	account:'724494205@qq.com',
-	pass:'He911215'
+	account:'724494205@qq.com'
 });
 
 import Notification from '../../components/Notification/index';

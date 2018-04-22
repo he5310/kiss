@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Router, BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import * as React from 'react';
+
 import { render } from 'react-dom';
 
 import Tabs from './components/Tabs/index';
@@ -13,20 +14,29 @@ import AsyncCompHoc from './components/Hoc/AsyncComponent';
 
 import CommonComp from './views/index';
 
-const Home = AsyncCompHoc(() => System.import('./views/main/home').then((module: any) => module.default));
 
-const Explore = AsyncCompHoc(() => System.import('./views/main/explore').then((module: any) => module.default));
+import createBrowserHistory from 'history/createBrowserHistory'
 
-const User = AsyncCompHoc(() => System.import('./views/user/route').then((module: any) => module.default));
+const history = createBrowserHistory();
+console.log(history);
+history.listen((location, action) => {
+	document.title = location.key
+})
 
-const InvalidRoute = AsyncCompHoc(() => System.import('./views/main/invalidRoute').then((module: any) => module.default));
+const Home = AsyncCompHoc(() => import('./views/main/home').then((module: any) => module.default));
 
-const Test = AsyncCompHoc(() => System.import('./views/main/test').then((module: any) => module.default));
+const Explore = AsyncCompHoc(() => import('./views/main/explore').then((module: any) => module.default));
+
+const User = AsyncCompHoc(() => import('./views/user/route').then((module: any) => module.default));
+
+const InvalidRoute = AsyncCompHoc(() => import('./views/main/invalidRoute').then((module: any) => module.default));
+
+const Test = AsyncCompHoc(() => import('./views/main/test').then((module: any) => module.default));
 
 
 const App = (props: any) => {
 	return (
-		<BrowserRouter>
+		<Router history={history}>
 			<main>
 				<CommonComp />
 				<Switch>
@@ -38,12 +48,9 @@ const App = (props: any) => {
 					<Route path='/user' component={User}></Route>
 					<Route path='/test' component={Test}></Route>
 					<Route component={InvalidRoute}></Route>
-					{/* <Route path='/explore' component={Explore}></Route>
-        <Route path='/notifications' component={Notifications}></Route>
-        <Route path='/messages' component={Messages}></Route> */}
 				</Switch>
 			</main>
-		</BrowserRouter>);
+		</Router>);
 };
 
 

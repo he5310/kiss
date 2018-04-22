@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Link } from 'react-router-dom';
-import {hot} from 'react-hot-loader';
+// import { hot } from 'react-hot-loader';
 
 import Button from '../../../components/Button/index';
 
@@ -9,7 +9,7 @@ interface LoginStateTypes {
 	logining?: boolean
 }
 
-@hot(module)
+// @hot(module)
 export default class Login extends React.Component<{}, LoginStateTypes>{
 	state = {
 		logining: false
@@ -22,7 +22,11 @@ export default class Login extends React.Component<{}, LoginStateTypes>{
 	render() {
 		return (
 			<div style={{ padding: '.5rem' }}>
-				<h1>登陆kiss</h1>
+				<h1 className="tc">
+					<span style={{ color:'#1da1f2'}}>k</span>
+					<span style={{ color: 'red' }}>i</span>
+					<span style={{ color: 'green' }}>s</span>
+				</h1>
 				<div>
 					<input type="text" placeholder="账 号" />
 				</div>

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Button from '../../../components/Button';
+import Button from '../../../components/Button/index';
 import {hot} from 'react-hot-loader';
 @hot(module)
 export default class Login extends React.Component {

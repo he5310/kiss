@@ -2,17 +2,17 @@ const webpack = require('webpack');
 var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-	// devtool: 'eval-source-map',
+	mode: 'development',
+	devtool: 'eval-source-map',
 	entry: path.resolve(__dirname, './src/index.tsx'),
 	output: {
 		path: path.resolve(__dirname, './public'),
-		filename: 'bundle.js',
-		chunkFilename: '[name].js'
+		filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js'
 	},
 	devServer: {
-		contentBase: path.resolve(__dirname, './dist'),
+		contentBase: path.resolve(__dirname, './public'),
 		inline: true,
-		host: 'localhost',
 		port: 8081,
 		historyApiFallback: true,
 		compress: true,
@@ -93,7 +93,7 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			template:'public/index.html'
+			template:'./index.html'
 		})
 	]
 };
