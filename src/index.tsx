@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import { render } from 'react-dom';
 
-import Tabs from './components/Tabs/index';
 
 import 'normalize.css';
 
@@ -18,10 +17,10 @@ import CommonComp from './views/index';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
-console.log(history);
+/* console.log(history);
 history.listen((location, action) => {
 	document.title = location.key
-})
+}) */
 
 const Home = AsyncCompHoc(() => import('./views/main/home').then((module: any) => module.default));
 

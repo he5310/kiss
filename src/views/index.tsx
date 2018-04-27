@@ -29,10 +29,6 @@ export default class CommonComponents extends React.Component<{}, stateTypes> {
 
 	render() {
 		const { hasNotification } = this.state;
-		return (
-			<div>
-				{/* {hasNotification && <Notification />} */}
-			</div>
-		);
+		return null;
 	}
 }

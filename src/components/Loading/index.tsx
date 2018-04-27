@@ -1,7 +1,7 @@
-import  styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import * as React from 'react';
-
+import './style.less'
 // import { Loader } from 'react-feather';
 var Loader = require('react-feather').Loader
 
@@ -39,12 +39,7 @@ interface LoaderBoxPropTypes {
 
 const LoadingBox = (props: LoaderBoxPropTypes) => {
 	return (
-		props.isLoading ? <LoaderBox>
-			<Rotate style={{ lineHeight: 0 }}>
-				<Loader width="30" height="100%" />
-			</Rotate>
-			<div style={{ marginTop: '1rem' }}>数据请求中...</div>
-		</LoaderBox> : null
+		props.isLoading ? <div className="loader">Loading...</div> : null
 	);
 };
 

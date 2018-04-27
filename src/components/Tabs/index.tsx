@@ -11,22 +11,22 @@ interface TabPropsTypes {
 	direction?: string
 }
 
-const Tabs = (props: TabPropsTypes) => {
+export const Tabs = (props: TabPropsTypes) => {
 	return (<div className={props.direction == 'down' ? 'header' : 'header-hide-title'}>
 		<div className='header-title'>
 			<User />
 		</div>
 		<nav className='nav-header'>
-			<NavLink to='/home' activeClassName='nav-tab-selected'>
+			<NavLink to='/home' activeClassName='nav-tab-selected' >
 				<Home />
 			</NavLink>
-			<NavLink to='/explore' activeClassName='nav-tab-selected'>
+			<NavLink to='/explore' activeClassName='nav-tab-selected' >
 				<Search />
 			</NavLink>
-			<NavLink to='/notifications' activeClassName='nav-tab-selected'>
+			<NavLink to='/notifications' activeClassName='nav-tab-selected' >
 				<Bell />
 			</NavLink>
-			<NavLink to='/messages' activeClassName='nav-tab-selected'>
+			<NavLink to='/messages' activeClassName='nav-tab-selected' >
 				<MessageSquare />
 			</NavLink>
 		</nav>
