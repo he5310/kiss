@@ -5,7 +5,7 @@ import * as React from 'react';
 var X = require('react-feather').X;
 
 var request = require('../../services/request.js').default;
-
+// 测试从master分支推送到dev分支
 /* request('/login',{
 	account:'724494205@qq.com'
 }); */
