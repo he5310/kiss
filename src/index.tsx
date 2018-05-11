@@ -1,4 +1,4 @@
-import { Router, BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import * as React from 'react';
 
@@ -17,10 +17,10 @@ import CommonComp from './views/index';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const history = createBrowserHistory();
-/* console.log(history);
 history.listen((location, action) => {
-	document.title = location.key
-}) */
+	console.log(location, action);
+	document.title = location.key;
+})
 
 const Home = AsyncCompHoc(() => import('./views/main/home').then((module: any) => module.default));
 

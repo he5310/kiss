@@ -20,7 +20,7 @@ export const Tabs = (props: TabPropsTypes) => {
 			<NavLink to='/home' activeClassName='nav-tab-selected' >
 				<Home />
 			</NavLink>
-			<NavLink to='/explore' activeClassName='nav-tab-selected' >
+			<NavLink to='/explore' replace activeClassName='nav-tab-selected' >
 				<Search />
 			</NavLink>
 			<NavLink to='/notifications' activeClassName='nav-tab-selected' >

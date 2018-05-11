@@ -1,10 +1,9 @@
-import * as React from 'react';
+import *as React from 'react';
 
-import * as Notification from '../components/Notification/index';
-
+import Notification from '../components/Notification/index';
 
 interface stateTypes {
-	hasNotification: boolean
+	hasNotification?: boolean
 }
 export default class CommonComponents extends React.Component<{}, stateTypes> {
 	state = {
@@ -29,6 +28,8 @@ export default class CommonComponents extends React.Component<{}, stateTypes> {
 
 	render() {
 		const { hasNotification } = this.state;
-		return null;
+		return (<div>
+			<Notification />
+		</div>);
 	}
 }

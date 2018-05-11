@@ -8,6 +8,7 @@ module.exports = {
 		"eslint:recommended",
 		"plugin:react/recommended"
 	],
+	"parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaFeatures": {
 			"experimentalObjectRestSpread": true,
@@ -35,6 +36,10 @@ module.exports = {
 		"semi": [
 			"error",
 			"always"
-		]
+		],
+		"max-len": ["error", {
+			"code": 120
+		}]
+
 	}
 };
