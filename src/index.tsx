@@ -23,6 +23,7 @@ history.listen((location, action) => {
 })
 
 // 新增了一行测试test分支merge的时候会不会丢失
+// 测试只提交有冲突的文件，看是否会丢失代码
 
 const Home = AsyncCompHoc(() => import('./views/main/home').then((module: any) => module.default));
 
