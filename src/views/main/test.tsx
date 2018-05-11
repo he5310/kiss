@@ -10,7 +10,7 @@ var request = require('../../services/request.js').default;
 	account:'724494205@qq.com'
 }); */
 // 测试git
-// 测试core.autocrlf设置为input时，crlf 转换为lf
+// 测试test分支合并dev分支并且解决冲突
 
 // 测试分支push到dev111
 import Notification from '../../components/Notification/index';

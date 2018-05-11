@@ -22,6 +22,8 @@ history.listen((location, action) => {
 	document.title = location.key;
 })
 
+// 新增了一行测试test分支merge的时候会不会丢失
+
 const Home = AsyncCompHoc(() => import('./views/main/home').then((module: any) => module.default));
 
 const Explore = AsyncCompHoc(() => import('./views/main/explore').then((module: any) => module.default));
