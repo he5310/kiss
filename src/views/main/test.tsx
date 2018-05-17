@@ -3,6 +3,10 @@ import * as React from 'react';
 // import { X } from 'react-feather';
 
 var X = require('react-feather').X;
+import * as declareFile from '../../global.d';
+// let ApiUrl = '1212';
+// console.log(declareFile.ApiUrl)
+
 
 var request = require('../../services/request.js').default;
 // 测试从master分支推送到dev分支
