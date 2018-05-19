@@ -4,8 +4,10 @@
 	"description": "keep it simple",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --open ",
-		"build": "webpack -p"
+		"dev": "./node_modules/.bin/webpack-dev-server --open ",
+		"build": "./node_modules/.bin/webpack -p",
+		"deploy":"gcloud.cmd app deploy",
+		"start":"node app.js"
 	},
 	"author": "he5310",
 	"license": "ISC",
