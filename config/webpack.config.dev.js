@@ -1,19 +1,24 @@
 const webpack = require('webpack');
 var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
+	externals: {
+		 "react": "React",
+		 "react-dom": "ReactDOM"
+	},
 	mode: 'development',
 	devtool: 'eval-source-map',
-	entry: path.resolve(__dirname, './src/index.tsx'),
+	entry: path.join(__dirname, '../', 'src/index.tsx'),
 	output: {
-		path: path.resolve(__dirname, './public'),
+		path: path.join(__dirname, '../', 'public'),
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].bundle.js'
 	},
 	devServer: {
-		contentBase: path.resolve(__dirname, './public'),
+		contentBase: path.join(__dirname, '../', 'public'),
 		inline: true,
-		host:'0.0.0.0',
+		host: '0.0.0.0',
 		port: 8081,
 		historyApiFallback: true,
 		compress: true,
@@ -29,11 +34,9 @@ module.exports = {
 		extensions: ['.ts', '.tsx', '.js', '.json']
 	},
 	module: {
-		rules: [
-			{
+		rules: [{
 				test: /\.tsx?$/,
-				use: [
-					{
+				use: [{
 						loader: 'babel-loader',
 						options: {
 							babelrc: true,
@@ -58,23 +61,22 @@ module.exports = {
 			},
 			{
 				test: /\.less|\.css$/,
-				use: [
-					{
-						loader: 'style-loader',
-						options: {
-							modules: true,
-							localIdentName: '[local]-[hash:base64:5]'
-						}
-					}, {
-						loader: 'css-loader',
-						options: {
-							importLoaders: 3
-						}
-					}, {
-						loader: 'postcss-loader'
-					}, {
-						loader: 'less-loader'
-					}]
+				use: [{
+					loader: 'style-loader',
+					options: {
+						modules: true,
+						localIdentName: '[local]-[hash:base64:5]'
+					}
+				}, {
+					loader: 'css-loader',
+					options: {
+						importLoaders: 3
+					}
+				}, {
+					loader: 'postcss-loader'
+				}, {
+					loader: 'less-loader'
+				}]
 			}, {
 				/* test: /\.(jpe?g|png|svg|gif)$/i,
         use: [
@@ -94,7 +96,8 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			template:'./index.html'
-		})
+			template: path.join(__dirname, '../', 'index.html')
+		}),
+		// new webpack.IgnorePlugin(/^react$/)
 	]
 };

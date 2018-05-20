@@ -4,18 +4,18 @@
 	"description": "keep it simple",
 	"main": "index.js",
 	"scripts": {
-		"dev": "./node_modules/.bin/webpack-dev-server --open ",
-		"build": "./node_modules/.bin/webpack -p",
-		"deploy":"gcloud.cmd app deploy",
-		"start":"node app.js"
+		"dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.config.dev.js ",
+		"build": "./node_modules/.bin/webpack --config ./config/webpack.config.prod.js -p",
+		"deploy": "gcloud.cmd app deploy",
+		"start": "node app.js",
+		"browse": "gcloud.cmd app browse"
 	},
 	"author": "he5310",
 	"license": "ISC",
 	"dependencies": {
-		"@types/react": "^16.0.36",
-		"@types/react-dom": "^16.0.3",
-		"@types/react-router": "^4.0.21",
-		"@types/react-router-dom": "^4.2.3",
+		"@types/react": "^16.3.14",
+		"@types/react-dom": "^16.0.5",
+		"@types/react-router-dom": "^4.2.6",
 		"axios": "^0.17.1",
 		"babel-core": "^6.26.0",
 		"babel-loader": "^7.1.4",
@@ -31,7 +31,7 @@
 		"less-loader": "^4.0.5",
 		"normalize.css": "^7.0.0",
 		"postcss-loader": "^2.0.10",
-		"react": "^16.1.1",
+		"react": "^16.3.2",
 		"react-dom": "^16.2.0",
 		"react-feather": "^1.0.8",
 		"react-loadable": "^5.3.1",
@@ -41,6 +41,7 @@
 		"typescript": "^2.7.1",
 		"webpack-dev-server": "^2.9.4"
 	},
+	"peerDependencies": {},
 	"devDependencies": {
 		"awesome-typescript-loader": "^5.0.0",
 		"babel-eslint": "^8.2.3",
