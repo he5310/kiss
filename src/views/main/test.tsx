@@ -20,8 +20,8 @@ import Loading from '../../components/Loading/index'
 export default class Test extends React.Component {
 	render() {
 		return (
-			// <Notification />
-			<Loading isLoading={true} />
+			<Notification />
+			// <Loading isLoading={true} />
 		);
 	}
 }
