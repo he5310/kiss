@@ -1,27 +1,226 @@
-import * as React from 'react';
-
-// import { X } from 'react-feather';
-
-var X = require('react-feather').X;
-
-var request = require('../../services/request.js').default;
-// 测试从master分支推送到dev分支
-/* request('/login',{
-	account:'724494205@qq.com'
-}); */
-// 测试git
-// 测试test分支合并dev分支并且解决冲突
-// 冲突行test1212
-// 测试分支push到dev111
-import Notification from '../../components/Notification/index';
-
-import Loading from '../../components/Loading/index'
-
-export default class Test extends React.Component {
-	render() {
-		return (
-			<Notification />
-			// <Loading isLoading={true} />
-		);
-	}
-}
+import * as React from "react";
+import ContentLoader from "react-content-loader";
+enum Color { Red, Green, Blue }
+let c: Color = Color.Green;
+console.log(c)
+const MyBulletListLoader = () => (
+	<div>
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>{" "}
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>{" "}
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>{" "}
+		<ContentLoader
+			height={140}
+			speed={1}
+			primaryColor="#f3f3f3"
+			secondaryColor="#ecebeb"
+		>
+			{/* Pure SVG */}
+			{/* <rect x="0" y="0" rx="5" ry="5" width="70" height="70" /> */}
+			<circle
+				cx="10"
+				cy="23"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="55"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<circle
+				cx="10"
+				cy="85"
+				r="10"
+				stroke="black"
+				stroke-width="1"
+				fill="red"
+			/>
+			<rect x="25" y="17" rx="4" ry="4" width="90%" height="13" />
+			<rect x="25" y="50" rx="3" ry="3" width="80%" height="13" />
+			<rect x="25" y="80" rx="3" ry="3" width="70%" height="13" />
+		</ContentLoader>
+	</div>
+);
+export default MyBulletListLoader;
